@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хорошее</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button {
+            /* Цвет фона кнопки */
+             background-color: rgb(199, 144, 204); 
+            /* Размер текста в пикселях */
+            font-size: 50px;
+            
+            /* Внутренние отступы */
+            padding: 15px 25px;
+            
+            /* Граница. Толщина - 1 пиксель, линия сплошная, цвет черный */
+            border: 1px solid black;
+            
+            /* Закругление границы - 25 пикселей */
+            border-radius: 25px;
+            
+            /* Тень под элементом. 2 пикселя смещения по оси x, 2 пикселя смещения по оси y, 2 пикселя - размытие тени, цвет серый */
+            box-shadow: 2px 2px 2px grey;
+            
+            /* Меняется курсор на руку при наведении на элемент */
+            cursor: pointer;
+        }
+
+        div > p {
+            font-size: 40px;
+            color: rgb(0, 3, 12);
+            margin-top: 15px;
+        }
+
+        div {
+            display: none;
+            width: 1200px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+        }
+
+        button:hover {
+            /* Граница. Толщина - 2 пикселя, линия сплошная, цвет черный */
+            border: 2px solid black;
+
+             /* Тень под элементом. 6 пикселей смещения по оси x, 6 пикселей смещения по оси y, 6 пикселей - размытие тени, цвет серый */
+            box-shadow: 6px 6px 6px grey;
+        }
+
+        button:active div {
+            display: block;
+        }
+
+        button:active > p {
+            display: none;
+        }
+
+        /* Состояние нажатой кнопки */
+        button:active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(90deg, #22e4b2, #e16824, #245ae1, #d724e1, #e12424, #dde124, #e16824, #22e4b2);
+            background-size: 1200% 1200%;
+            animation: animation 5s linear infinite;
+        }
+
+        /* Анимации */
+        @keyframes animation {
+            0% {
+                background-position: -10% 50%
+            }
+            
+            100% {
+                background-position: 100% 50%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>
+        <div>
+            <img src="./cat.jpg" alt="Котик доволен">
+            <p>🥰Котик доволен😺</p>
+        </div>
+        <p>😣Зажми ради котика😿</p>
+    </button>
+</body>
+
+</html>
